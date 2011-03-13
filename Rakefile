@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "bleeding_edge"
   gem.homepage = "http://github.com/andeemarks/bleeding_edge"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = "Generates report showing how up-to-date your RubyGems gems are"
+  gem.description = "A gem that analyses your currently installed set of RubyGems and looks ahead to see how close to the 'bleeding edge' of each gem you are.  Produces report to show how up-to-date your gems are."
   gem.email = "andy@corvine.org"
   gem.authors = ["Andy Marks"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,

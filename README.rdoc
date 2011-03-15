@@ -1,6 +1,16 @@
 = bleeding_edge
 
-Description goes here.
+The power of Ruby makes development fast.  RubyGems makes packaging and using Ruby library trivial.  However the combination of these two
+technologies places far more emphasis on managing these fast-changing dependencies closely and good codebases can quickly take on considerable
+technical debt if they stray too far from modern versions of their gems.
+
+Bleeding Edge examines all the RubyGems-managed gems currently in scope (i.e., "gem list") and then produces a report showing how far each gem
+is from it's most recent release.
+
+With this information, you can where your risks are with respect to falling too far behind the current state of your dependent gems.
+
+Bleeding Edge does not currently handle transitive dependencies between gems (e.g., Rails 2.3.x requires ActiveRecord 2.3.x), so it may show
+gem versions that you cannot use because of these transitive dependencies.
 
 == Contributing to bleeding_edge
  

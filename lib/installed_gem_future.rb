@@ -10,6 +10,8 @@ class InstalledGemFuture
   end
   
   def add_future_version(version)
+    raise RuntimeError if Gem::Version.create(version) <= Gem::Version.create(@installed_version)
+    
     @futures << version unless @futures.include? version
   end
   

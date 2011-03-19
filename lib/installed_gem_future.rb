@@ -28,9 +28,7 @@ class InstalledGemFuture
   private
   
   def versions_behind
-    return count if count > 0
-    
-    "N/a"
+    count
   end
   
   def futures_to_html

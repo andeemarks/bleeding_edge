@@ -29,8 +29,8 @@ Gem::Specification.new do |s|
     "lib/installed_gem_future.rb",
     "lib/report-footer.html",
     "lib/report-header.html",
-    "test/helper.rb",
-    "test/test_bleeding_edge.rb"
+    "spec/spec_helper.rb",
+    "spec/installed_gem_future_spec.rb"
   ]
   s.homepage = %q{http://github.com/andeemarks/bleeding_edge}
   s.licenses = ["MIT"]
@@ -38,8 +38,8 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Generates report showing how up-to-date your RubyGems gems are}
   s.test_files = [
-    "test/helper.rb",
-    "test/test_bleeding_edge.rb"
+    "spec/spec_helper.rb",
+    "spec/installed_gem_future_spec.rb"
   ]
 
   if s.respond_to? :specification_version then
@@ -51,17 +51,20 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
+      s.add_development_dependency(%q<rspec>, [">= 0"])
     else
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_dependency(%q<rcov>, [">= 0"])
+      s.add_dependency(%q<rspec>, [">= 0"])
     end
   else
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
     s.add_dependency(%q<rcov>, [">= 0"])
+    s.add_dependency(%q<rspec>, [">= 0"])
   end
 end
 

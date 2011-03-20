@@ -26,12 +26,14 @@ class BleedingEdge
     puts "Found #{gem.count} versions for #{dep}"
   end
 
-  def find_installed_gems
-    Gem.searcher.find_all("*").each do |gem|
+  def find_installed_gems(searcher)
+    searcher.find_all("*").each do |gem|
       @installed_gems << InstalledGemFuture.new(gem)
     end
 
     puts "Found #{@installed_gems.size.to_s} installed gems in scope"
+    
+    @installed_gems
   end
 
   def output_as_html
@@ -47,7 +49,7 @@ class BleedingEdge
   end
 end
 
-be = BleedingEdge.new
-be.find_installed_gems
-be.find_futures_for_gems
-be.output_as_html
+# be = BleedingEdge.new
+# be.find_installed_gems(Gem.searcher)
+# be.find_futures_for_gems
+# be.output_as_html

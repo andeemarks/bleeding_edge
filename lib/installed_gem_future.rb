@@ -1,3 +1,4 @@
+require 'gem_version_comparator'
 
 class InstalledGemFuture
   attr_reader :gem, :installed_version, :name
@@ -36,26 +37,12 @@ class InstalledGemFuture
   def futures_to_html
     html = ""
     previous_version = @installed_version
+    comparator = GemVersionComparator.new
     @futures.each do |future|
-      html << "<td class='#{version_change_label(previous_version, future)}'>#{future}</td>"
+      html << "<td class='#{comparator.difference_between({:from => previous_version, :to => future})}'>#{future}</td>"
       previous_version = future
     end
     
     html
-  end
-  
-  def version_change_label(from_version, to_version)
-    from_components = from_version.split(".")
-    to_components = to_version.split(".")
-    
-    begin
-      return "major" if (from_components[0].to_i < to_components[0].to_i)
-      return "minor" if (from_components[1].to_i < to_components[1].to_i)
-      return "build" if (from_components[2].to_i < to_components[2].to_i)
-    rescue NoMethodError
-      "unknown"
-    end
-    
-    "trivial"
   end
 end

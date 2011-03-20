@@ -32,8 +32,8 @@ describe GemVersionComparator do
     @comparator.difference_between({:from => "1.2.3", :to => "1.2.4"}).should == "build"
   end
   
-  it "should report an unknown change when either version does not have all components" do
-    @comparator.difference_between({:from => "1.2", :to => "1.2.4"}).should == "unknown"
-    @comparator.difference_between({:from => "1.2.3", :to => "1.2"}).should == "unknown"
+  it "should assume 0 for missing components" do
+    @comparator.difference_between({:from => "1.2", :to => "1.2.4"}).should == "build"
+    @comparator.difference_between({:from => "1", :to => "1.2"}).should == "minor"
   end
 end
